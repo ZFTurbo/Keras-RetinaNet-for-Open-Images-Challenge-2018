@@ -15,7 +15,7 @@ Python 3.5, Keras 2.2, [Keras-RetinaNet 0.4.1](https://github.com/fizyr/keras-re
 
 ## Pretrained models
 
-There are 2 RetinaNet models based on ResNet101 and ResNet152 for 443 classes (only Level 1). 
+There are 2 RetinaNet models based on ResNet101 and ResNet152 for [443 classes](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/a00_utils_and_constants.py#L36) (only Level 1). 
 
 | Backbone | Image Size | Model (training) | Model (inference) | Small validation mAP | Full validation mAP |
 | --- | --- | --- | --- | --- |  --- |
