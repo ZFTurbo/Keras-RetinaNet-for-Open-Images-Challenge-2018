@@ -27,18 +27,18 @@ There are 2 RetinaNet models based on ResNet101 and ResNet152 for [443 classes](
 
 ## Inference 
 
-Example can be found here: retinanet_inference_example.py
+Example can be found here: [retinanet_inference_example.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/retinanet_inference_example.py)
 
-You need to change files_to_process = glob.glob(DATASET_PATH + 'validation_big/\*.jpg') to your own set of files.
+You need to change [files_to_process = glob.glob(DATASET_PATH + 'validation_big/\*.jpg')](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/retinanet_inference_example.py#L181) to your own set of files.
 On output you will get "predictions_\*.csv" file with boxes.
 
-Having these predictions you can expand it to all 500 classes using code from create_higher_level_predictions_from_level_1_predictions_csv.py
+Having these predictions you can expand it to all 500 classes using code from [create_higher_level_predictions_from_level_1_predictions_csv.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/create_higher_level_predictions_from_level_1_predictions_csv.py)
 
 ## Training
 
 For training you need to download OID dataset (~500 GB images): https://storage.googleapis.com/openimages/web/challenge.html
 
-Next fix paths in a00_utils_and_constants.py
+Next fix paths in [a00_utils_and_constants.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/a00_utils_and_constants.py)
 
 Then to train on OID dataset you need to run python files in following order:
 
