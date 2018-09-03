@@ -1,6 +1,6 @@
 ## Simple TensorFlow solution for Open Images Challenge 2018
 
-Download **faster_rcnn_inception_resnet_v2_atrous_coco** model from https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+Download **faster_rcnn_inception_resnet_v2_atrous_oid** model from https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
 
 then run code one by one: 
 
