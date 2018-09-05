@@ -17,10 +17,10 @@ Python 3.5, Keras 2.2, [Keras-RetinaNet 0.4.1](https://github.com/fizyr/keras-re
 
 There are 2 RetinaNet models based on ResNet101 and ResNet152 for [443 classes](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/a00_utils_and_constants.py#L36) (only Level 1). 
 
-| Backbone | Image Size | Model (training) | Model (inference) | Small validation mAP | Full validation mAP |
+| Backbone | Image Size (px) | Model (training) | Model (inference) | Small validation mAP | Full validation mAP |
 | --- | --- | --- | --- | --- |  --- |
-| ResNet101 | 728 - 1024 | [739 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet101_level_1.h5) | [247 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet101_level_1_converted.h5) | 0.4896 | 0.377631 |
-| ResNet152 | 600 - 800 | [918 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet152_level_1.h5) | [308 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet152_level_1_converted.h5) | 0.5028 | 0.384009 |
+| ResNet101 | 728 - 1024 | [739 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet101_level_1.h5) | [247 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet101_level_1_converted.h5) | 0.4896 | 0.3776 |
+| ResNet152 | 600 - 800 | [918 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet152_level_1.h5) | [308 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.0/retinanet_resnet152_level_1_converted.h5) | 0.5028 | 0.3840 |
 
 * Model (training) - can be used to resume training or can be used as pretrain for your own classifier
 * Model (inference) - can be used to get prediction boxes for arbitrary images
