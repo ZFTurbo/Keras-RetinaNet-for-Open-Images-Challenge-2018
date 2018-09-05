@@ -52,6 +52,15 @@ or
 * retinanet_training_level_1/train_oid_level_1_resnet152.py
 
 
+## Ensembles
+
+If you have predictions from several models, for example for ResNet101 and ResNet152 backbones, then you can ensemble boxes with script:
+* ensemble_predictions_with_weighted_method.py
+
+Proposed method increases the overall performance: 
+
+* ResNet101 mAP 0.3776 + ResNet152 mAP 0.3840 gives in result: mAP 0.4220 
+
 ## Method description
 
 * https://www.kaggle.com/c/google-ai-open-images-object-detection-track/discussion/64633

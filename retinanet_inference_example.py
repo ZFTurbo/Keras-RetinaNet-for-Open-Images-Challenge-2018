@@ -173,10 +173,6 @@ if __name__ == '__main__':
     limit_boxes_per_image = 300
     type = 'avg'
 
-    output_cache_directory = OUTPUT_PATH + 'cache_retinanet_level_1/'
-    if not os.path.isdir(output_cache_directory):
-        os.mkdir(output_cache_directory)
-
     # files_to_process = glob.glob(INPUT_PATH + 'kaggle/challenge2018_test/*.jpg')
     files_to_process = glob.glob(DATASET_PATH + 'validation_big/*.jpg')
 
@@ -189,6 +185,10 @@ if __name__ == '__main__':
         backbone = 'resnet152'
         pretrained_model_path = MODELS_PATH + 'retinanet_resnet152_level_1_converted.h5'
         labels_list = LEVEL_1_LABELS
+
+    output_cache_directory = OUTPUT_PATH + 'cache_retinanet_level_1_{}/'.format(backbone)
+    if not os.path.isdir(output_cache_directory):
+        os.mkdir(output_cache_directory)
 
     get_retinanet_predictions_for_files(files_to_process, output_cache_directory, pretrained_model_path, backbone)
     create_csv_for_retinanet(output_cache_directory,

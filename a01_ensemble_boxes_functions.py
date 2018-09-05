@@ -80,6 +80,27 @@ def filter_boxes(boxes, scores, labels, thr):
     return new_boxes
 
 
+def filter_boxes_v2(boxes, scores, labels, thr):
+    new_boxes = []
+    for t in range(len(boxes)):
+        for i in range(len(boxes[t])):
+            box = []
+            for j in range(boxes[t][i].shape[0]):
+                label = labels[t][i][j].astype(np.int64)
+                score = scores[t][i][j]
+                if score < thr:
+                    break
+                # Mirror fix !!!
+                if i == 0:
+                    b = [int(label), float(score), float(boxes[t][i][j, 0]), float(boxes[t][i][j, 1]), float(boxes[t][i][j, 2]), float(boxes[t][i][j, 3])]
+                else:
+                    b = [int(label), float(score), 1 - float(boxes[t][i][j, 2]), float(boxes[t][i][j, 1]), 1 - float(boxes[t][i][j, 0]), float(boxes[t][i][j, 3])]
+                box.append(b)
+            # box = np.array(box)
+            new_boxes.append(box)
+    return new_boxes
+
+
 def find_matching_box(boxes_list, new_box, match_iou=0.55):
     best_iou = match_iou
     best_index = -1
