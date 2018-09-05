@@ -55,7 +55,7 @@ or
 ## Ensembles
 
 If you have predictions from several models, for example for ResNet101 and ResNet152 backbones, then you can ensemble boxes with script:
-* ensemble_predictions_with_weighted_method.py
+* [ensemble_predictions_with_weighted_method.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/ensemble_predictions_with_weighted_method.py)
 
 Proposed method increases the overall performance: 
 
