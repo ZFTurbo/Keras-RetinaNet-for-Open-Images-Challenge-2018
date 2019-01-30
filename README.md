@@ -30,7 +30,7 @@ There are 3 RetinaNet models based on ResNet50, ResNet101 and ResNet152 for [443
 
 Example can be found here: [retinanet_inference_example.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/retinanet_inference_example.py)
 
-You need to change [files_to_process = glob.glob(DATASET_PATH + 'validation_big/\*.jpg')](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/retinanet_inference_example.py#L181) to your own set of files.
+You need to change [files_to_process = glob.glob(DATASET_PATH + 'validation_big/\*.jpg')](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/retinanet_inference_example.py#L177) to your own set of files.
 On output you will get "predictions_\*.csv" file with boxes.
 
 Having these predictions you can expand it to all 500 classes using code from [create_higher_level_predictions_from_level_1_predictions_csv.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/create_higher_level_predictions_from_level_1_predictions_csv.py)
