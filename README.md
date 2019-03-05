@@ -9,6 +9,10 @@ Repository contains the following:
 * Code to train your own classifier based on Keras-RetinaNet and OID dataset 
 * Code to expand predictions for full 500 classes
 
+## Online demo
+
+http://nn-box.com/box/ - upload image wait several seconds and it will show boxes. ResNet152 is used as backbone.
+
 ## Requirements
 
 Python 3.5, Keras 2.2, [Keras-RetinaNet 0.4.1](https://github.com/fizyr/keras-retinanet)
