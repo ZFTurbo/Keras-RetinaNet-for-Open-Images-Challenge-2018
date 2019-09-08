@@ -23,8 +23,8 @@ There are 3 RetinaNet models based on ResNet50, ResNet101 and ResNet152 for [443
 
 | Backbone | Image Size (px) | Model (training) | Model (inference) | Small validation mAP | Full validation mAP |
 | --- | --- | --- | --- | --- |  --- |
-| ResNet50 | 728 - 1024 | [533 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.1/retinanet_resnet50_level_1.h5) | [178 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.1/retinanet_resnet50_level_1_converted.h5) | 0.4621 | 0.3520 |
-| ResNet101 | 728 - 1024 | [739 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.2/retinanet_resnet101_level_1_v1.2.h5) | [247 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.2/retinanet_resnet101_level_1_v1.2_converted.h5) | 0.5031 | 0.3870 |
+| ResNet50 | 768 - 1024 | [533 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.1/retinanet_resnet50_level_1.h5) | [178 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.1/retinanet_resnet50_level_1_converted.h5) | 0.4621 | 0.3520 |
+| ResNet101 | 768 - 1024 | [739 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.2/retinanet_resnet101_level_1_v1.2.h5) | [247 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.2/retinanet_resnet101_level_1_v1.2_converted.h5) | 0.5031 | 0.3870 |
 | ResNet152 | 600 - 800 | [918 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.2/retinanet_resnet152_level_1_v1.2.h5) | [308 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.2/retinanet_resnet152_level_1_v1.2_converted.h5) | 0.5194 | 0.3959 |
 
 * Model (training) - can be used to resume training or can be used as pretrain for your own classifier
