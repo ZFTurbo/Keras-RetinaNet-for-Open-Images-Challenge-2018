@@ -17,7 +17,7 @@ http://nn-box.com/box/ - upload image wait several seconds and it will show boxe
 
 Python 3.5, Keras 2.2, [Keras-RetinaNet 0.4.1](https://github.com/fizyr/keras-retinanet)
 
-## Pretrained models
+## Pretrained models 2018
 
 There are 3 RetinaNet models based on ResNet50, ResNet101 and ResNet152 for [443 classes](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/a00_utils_and_constants.py#L36) (only Level 1). 
 
@@ -30,6 +30,16 @@ There are 3 RetinaNet models based on ResNet50, ResNet101 and ResNet152 for [443
 * Model (training) - can be used to resume training or can be used as pretrain for your own classifier
 * Model (inference) - can be used to get prediction boxes for arbitrary images
 
+## Pretrained models 2019
+
+There are 3 RetinaNet models based on ResNet50, ResNet101 and ResNet152 for all [500 classes](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/a00_utils_and_constants.py#L130). 
+
+| Backbone | Image Size (px) | Model (training) | Model (inference) | Small validation mAP | LB (Public) |
+| --- | --- | --- | --- | --- |  --- |
+| ResNet50 | 768 - 1024 | [534 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.3/retinanet_resnet50_500_classes_0.4594.h5) | [178 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.3/retinanet_resnet50_500_classes_0.4594_converted.h5) | 0.4594 | 0.4223 |
+| ResNet101 | 768 - 1024 | [752 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.3/retinanet_resnet101_500_classes_0.4986.h5) | [251 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.3/retinanet_resnet101_500_classes_0.4986_converted.h5) | 0.4986 | 0.4520 |
+| ResNet152 | 600 - 800 | [932 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.3/retinanet_resnet152_500_classes_0.4991.h5) | [312 MB](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/releases/download/v1.3/retinanet_resnet152_500_classes_0.4991_converted.h5) | 0.4991 | 0.4651 |
+
 ## Inference 
 
 Example can be found here: [retinanet_inference_example.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/retinanet_inference_example.py)
@@ -37,7 +47,7 @@ Example can be found here: [retinanet_inference_example.py](https://github.com/Z
 You need to change [files_to_process = glob.glob(DATASET_PATH + 'validation_big/\*.jpg')](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/retinanet_inference_example.py#L181) to your own set of files.
 On output you will get "predictions_\*.csv" file with boxes.
 
-Having these predictions you can expand it to all 500 classes using code from [create_higher_level_predictions_from_level_1_predictions_csv.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/create_higher_level_predictions_from_level_1_predictions_csv.py)
+Having Level 1 predictions you can expand it to all 500 classes using code from [create_higher_level_predictions_from_level_1_predictions_csv.py](https://github.com/ZFTurbo/Keras-RetinaNet-for-Open-Images-Challenge-2018/blob/master/create_higher_level_predictions_from_level_1_predictions_csv.py)
 
 ## Training
 

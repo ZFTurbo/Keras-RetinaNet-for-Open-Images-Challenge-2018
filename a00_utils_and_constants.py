@@ -126,6 +126,9 @@ LEVEL_1_LABELS_LOW_SAMPLES = ['Adhesive tape', 'Alarm clock', 'Ambulance', 'Arti
                               'Tiara', 'Tick', 'Toaster', 'Toilet paper', 'Torch', 'Towel', 'Training bench',
                               'Treadmill', 'Winter melon', 'Wood-burning stove', 'Wrench']
 
+# All labels
+ALL_LABELS = LEVEL_1_LABELS + LEVEL_2_LABELS + LEVEL_3_LABELS + LEVEL_4_LABELS + LEVEL_5_LABELS
+
 
 def save_in_file(arr, file_name):
     pickle.dump(arr, gzip.open(file_name, 'wb+', compresslevel=3))
