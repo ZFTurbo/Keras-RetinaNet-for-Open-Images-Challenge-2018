@@ -54,7 +54,8 @@ def create_level1_files():
     not_negative = [d2[f] for f in LEVEL_2_LABELS + LEVEL_3_LABELS + LEVEL_4_LABELS + LEVEL_5_LABELS]
 
     if 1:
-        boxes = pd.read_csv(DATASET_PATH + 'annotations/validation-annotations-bbox.csv')
+        # boxes = pd.read_csv(DATASET_PATH + 'annotations/validation-annotations-bbox.csv')
+        boxes = pd.read_csv(DATASET_PATH + 'challenge-2019-validation-detection-bbox.csv')
         print(len(boxes))
 
         # Remove Group Of boxes!
@@ -76,7 +77,8 @@ def create_level1_files():
         reduced_boxes.to_csv(out_dir + 'validation-annotations-bbox-level-1.csv', index=False)
 
     if 1:
-        boxes = pd.read_csv(DATASET_PATH + 'annotations/train-annotations-bbox.csv')
+        # boxes = pd.read_csv(DATASET_PATH + 'annotations/train-annotations-bbox.csv')
+        boxes = pd.read_csv(DATASET_PATH + 'challenge-2019-train-detection-bbox.csv')
         print(len(boxes))
 
         # Remove Group Of boxes!
