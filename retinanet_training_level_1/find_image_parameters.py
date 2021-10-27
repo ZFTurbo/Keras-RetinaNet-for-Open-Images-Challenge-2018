@@ -8,7 +8,7 @@ from hashlib import md5
 
 STORAGE_PATH_TRAIN = DATASET_PATH + 'train/'
 STORAGE_PATH_TEST = DATASET_PATH + 'test/'
-STORAGE_PATH_VALID = DATASET_PATH + 'validation_big/'
+STORAGE_PATH_VALID = DATASET_PATH + 'validation/'
 STORAGE_PATH_KAGGLE_TEST = INPUT_PATH + 'kaggle/challenge2018_test/'
 
 
@@ -71,6 +71,6 @@ if __name__ == '__main__':
     except:
         print('PYVips not available. Image parameters detection will be slow!')
     get_image_stat('validation')
-    get_image_stat('test')
     get_image_stat('train')
+    get_image_stat('test')
     get_image_stat('kaggle_test')
