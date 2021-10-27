@@ -99,7 +99,12 @@ def get_retinanet_predictions_for_files(files, out_dir, pretrained_model_path, b
 def create_csv_for_retinanet(input_dir, out_file, label_arr, skip_box_thr=0.05, intersection_thr=0.55, limit_boxes=300, type='avg'):
     out = open(out_file, 'w')
     out.write('ImageId,PredictionString\n')
-    d1, d2 = get_description_for_labels()
+    try:
+        d1, d2 = get_description_for_labels()
+    except Exception as e:
+        print('Check you have file {}'.format(INPUT_PATH + 'class-descriptions-boxable.csv'))
+        print('Download from here: https://raw.githubusercontent.com/StrongRay/YOLOV3-PMD/master/class-descriptions-boxable.csv')
+        d1, d2 = None, None
     files = glob.glob(input_dir + '*.pkl')
     for f in files:
         id = os.path.basename(f)[:-4]
@@ -119,7 +124,7 @@ def create_csv_for_retinanet(input_dir, out_file, label_arr, skip_box_thr=0.05, 
             b = merged_boxes[i][2:]
 
             google_name = label_arr[label]
-            if '/' not in google_name:
+            if '/' not in google_name and d2 is not None:
                 google_name = d2[google_name]
 
             xmin = b[0]
@@ -173,12 +178,13 @@ if __name__ == '__main__':
     limit_boxes_per_image = 300
     type = 'avg'
 
+    # files_to_process = glob.glob('images/*.jpg')
     # files_to_process = glob.glob(INPUT_PATH + 'kaggle/challenge2018_test/*.jpg')
-    files_to_process = glob.glob(DATASET_PATH + 'validation_big/*.jpg')
+    files_to_process = glob.glob(DATASET_PATH + 'validation/*.jpg')
 
     if 1:
         backbone = 'resnet101'
-        pretrained_model_path = MODELS_PATH + 'retinanet_resnet101_level_1_converted.h5'
+        pretrained_model_path = 'models/retinanet_resnet101_level_1_converted.h5'
         labels_list = LEVEL_1_LABELS
 
     if 0:

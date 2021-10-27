@@ -20,16 +20,22 @@ import platform
 import json
 
 
-if platform.processor() == 'Intel64 Family 6 Model 79 Stepping 1, GenuineIntel':
-    DATASET_PATH = 'E:/Projects_M2/2018_07_Google_Open_Images/input/'
-else:
-    DATASET_PATH = 'D:/Projects/2018_07_Google_Open_Images/input/'
+# Change this to location of Open Images!
+# DATASET_PATH = 'E:/Projects_M2/2019_06_Google_Open_Images/input/data_detection/'
+DATASET_PATH = './input/'
 
-ROOT_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + '/'
+
+ROOT_PATH = os.path.dirname(os.path.realpath(__file__)) + '/'
 INPUT_PATH = ROOT_PATH + 'input/'
 OUTPUT_PATH = ROOT_PATH + 'output/'
+if not os.path.isdir(OUTPUT_PATH):
+    os.mkdir(OUTPUT_PATH)
 MODELS_PATH = ROOT_PATH + 'models/'
+if not os.path.isdir(MODELS_PATH):
+    os.mkdir(MODELS_PATH)
 SUBM_PATH = ROOT_PATH + 'subm/'
+if not os.path.isdir(SUBM_PATH):
+    os.mkdir(SUBM_PATH)
 
 # https://storage.googleapis.com/openimages/challenge_2018/bbox_labels_500_hierarchy_visualizer/circle.html
 
@@ -206,6 +212,8 @@ def read_single_image(path):
 
 
 def get_description_for_labels():
+    # You can find file here:
+    # https://raw.githubusercontent.com/StrongRay/YOLOV3-PMD/master/class-descriptions-boxable.csv
     out = open(INPUT_PATH + 'class-descriptions-boxable.csv')
     lines = out.readlines()
     ret_1, ret_2 = dict(), dict()
