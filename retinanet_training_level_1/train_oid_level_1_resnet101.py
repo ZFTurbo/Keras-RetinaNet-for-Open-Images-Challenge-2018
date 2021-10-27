@@ -394,7 +394,7 @@ def main(args=None):
         generator=train_generator,
         steps_per_epoch=args.steps,
         epochs=args.epochs,
-        verbose=2,
+        verbose=1,
         callbacks=callbacks,
         initial_epoch=init_epoch,
     )

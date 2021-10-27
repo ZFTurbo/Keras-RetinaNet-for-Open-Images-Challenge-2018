@@ -291,8 +291,10 @@ class OpenImagesGenerator(Generator):
         id = self.id_to_image_id[image_index]
         if type == 'train':
             path = os.path.join(up, id[:3], id + '.jpg')
+            # path = os.path.join(up, 'images', id[:3], id + '.jpg')
         else:
             path = os.path.join(up, id + '.jpg')
+            # path = os.path.join(up, 'images', id + '.jpg')
         return path
 
     def load_image(self, image_index):
@@ -304,6 +306,7 @@ class OpenImagesGenerator(Generator):
 
         labels = image_annotations['boxes']
         height, width = image_annotations['h'], image_annotations['w']
+        annotations = {'labels': np.empty((0,)), 'bboxes': np.empty((0, 4))}
 
         boxes = np.zeros((len(labels), 5))
         for idx, ann in enumerate(labels):
@@ -319,7 +322,10 @@ class OpenImagesGenerator(Generator):
             boxes[idx, 3] = y2
             boxes[idx, 4] = cls_id
 
-        return boxes
+        annotations['labels'] = boxes[:, 4]
+        annotations['bboxes'] = boxes[:, :4]
+
+        return annotations
 
     def group_images(self):
         classes = list(range(self.num_classes())) + ['empty']
@@ -356,7 +362,7 @@ class OpenImagesGenerator(Generator):
         image, image_scale = self.resize_image(image)
 
         # apply resizing to annotations too
-        annotations[:, :4] *= image_scale
+        annotations['bboxes'] *= image_scale
 
         return image, annotations
 
