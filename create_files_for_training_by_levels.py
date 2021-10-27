@@ -74,6 +74,10 @@ def create_level1_files():
         neg_samp = get_empty_df(negative_samples)
 
         reduced_boxes = pd.concat([reduced_boxes, neg_samp], axis=0)
+        reduced_boxes = reduced_boxes[[
+            'ImageID', 'Source', 'LabelName', 'Confidence', 'XMin', 'XMax', 'YMin', 'YMax',
+            'IsOccluded', 'IsTruncated','IsGroupOf', 'IsDepiction', 'IsInside'
+        ]]
         reduced_boxes.to_csv(out_dir + 'validation-annotations-bbox-level-1.csv', index=False)
 
     if 1:
@@ -97,6 +101,10 @@ def create_level1_files():
         neg_samp = get_empty_df(negative_samples)
 
         reduced_boxes = pd.concat([reduced_boxes, neg_samp], axis=0)
+        reduced_boxes = reduced_boxes[[
+            'ImageID', 'Source', 'LabelName', 'Confidence', 'XMin', 'XMax', 'YMin', 'YMax',
+            'IsOccluded', 'IsTruncated', 'IsGroupOf', 'IsDepiction', 'IsInside'
+        ]]
         reduced_boxes.to_csv(out_dir + 'train-annotations-bbox-level-1.csv', index=False)
 
 
