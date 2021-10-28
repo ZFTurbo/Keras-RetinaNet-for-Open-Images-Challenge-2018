@@ -15,7 +15,17 @@ http://nn-box.com/box/ - upload image wait several seconds and it will show boxe
 
 ## Requirements
 
-Python 3.5, Keras 2.2, [Keras-RetinaNet 0.4.1](https://github.com/fizyr/keras-retinanet)
+Python 3.5 (3.6)
+```buildoutcfg
+tensorflow==1.15
+Keras==2.3.1
+keras-resnet==0.1.0
+keras-retinanet==0.5.1
+setuptools==41.0.0
+pandas
+Pillow
+opencv-python
+```
 
 ## Pretrained models 2018
 
