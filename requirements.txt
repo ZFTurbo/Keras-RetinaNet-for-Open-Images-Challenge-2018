@@ -1,4 +1,4 @@
 keras==2.3.1
 keras-resnet==0.1.0
 keras-retinanet==0.5.1
-tensorflow-gpu==1.15.3
+tensorflow-gpu==2.6.4
